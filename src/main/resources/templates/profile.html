@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Your Profile</title>
+  <title>SkillHub | Profile</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-<h2>Your Profile</h2>
+  <div class="container">
+    <h1>Hello, <span th:text="${user.name}">User</span> 👋</h1>
+    <p>Email: <span th:text="${user.email}"></span></p>
+    <p>Role: <span th:text="${user.role}"></span></p>
 
-<p>Welcome, <span th:text="${user.name}">User</span>!</p>
-<p>Email: <span th:text="${user.email}">email@example.com</span></p>
-<p>Role: <span th:text="${user.role}">USER</span></p>
-
-<hr>
-<a th:href="@{/jobs}">View Jobs</a> |
-<a th:href="@{/logout}">Logout</a>
+    <a th:href="@{/logout}">Logout</a>
+  </div>
 </body>
 </html>

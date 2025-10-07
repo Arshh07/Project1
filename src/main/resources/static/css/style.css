@@ -1,4 +1,113 @@
-body { font-family: Arial, sans-serif; margin: 40px; background: #fafafa; }
-h1, h2 { color: #333; }
-a { margin-right: 10px; text-decoration: none; color: #007bff; }
-button { background: #007bff; color: white; border: none; padding: 5px 10px; cursor: pointer; }
+/* ====== SkillHub Neon Dark Theme ====== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --bg-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --accent: #7a5cff;
+  --accent-hover: #9f7bff;
+  --text: #f1f1f1;
+  --muted: #b0b0b0;
+  --error: #ff6b6b;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  width: 400px;
+  padding: 2.5rem;
+  border-radius: 1.2rem;
+  background: var(--card-bg);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  background: linear-gradient(45deg, #7a5cff, #6ec3f4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 90%;
+  padding: 0.8rem;
+  margin: 0.6rem 0;
+  border: none;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+button {
+  width: 95%;
+  padding: 0.9rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 0.6rem;
+  background: linear-gradient(90deg, #7a5cff, #6ec3f4);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #9f7bff, #89d6ff);
+  transform: scale(1.03);
+  box-shadow: 0 0 15px var(--accent-hover);
+}
+
+a {
+  color: #aab4ff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #7a5cff;
+}
+
+.error {
+  color: var(--error);
+  margin-top: 0.5rem;
+}
