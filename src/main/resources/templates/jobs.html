@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Jobs</title></head>
+<body>
+<h2>Available Jobs</h2>
+<a th:href="@{/jobs/post}">Post a Job</a>
+<ul>
+  <li th:each="job : ${jobs}">
+    <b th:text="${job.title}"></b> -
+    <span th:text="${job.description}"></span> ($<span th:text="${job.budget}"></span>)
+  </li>
+</ul>
+</body>
+</html>
